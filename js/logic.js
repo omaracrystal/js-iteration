@@ -7,8 +7,7 @@ Hints for the first problem:
 NOTE: use a loop to make this happen.
 */
 
-
-var createStringArray = function createStringArray (varClassName) {
+function createStringArray(varClassName) {
   var newString = varClassName[0][0].value
   var sum = [0]
   for (var i = 0; i < varClassName[0].length; i++) {
@@ -18,18 +17,19 @@ var createStringArray = function createStringArray (varClassName) {
   return stringArray;
 }
 
-var numArray = function convertStringArraytoNumArray (stringArray) {
+function convertStringArraytoNumArray(stringArray) {
   for (var i = 0; i < stringArray.length; i++) {
-    var numArray = (stringArray[i] = +stringArray[i]);
+    stringArray[i] = +stringArray[i];
   };
+  numArray = stringArray;
   return numArray;
 }
 
 
-var sumTotalAll= function sumAll(numArray) {
+function sumAll(numArray) {
   var total = 0;
     for (var i = 0; i < numArray.length; i++) {
-  sumAll = total += numArray[i];
+    total += numArray[i];
 }
   return total;
 }
@@ -48,18 +48,18 @@ var sumTotalAll= function sumAll(numArray) {
 //     return sumAll;
 //    }
 
-
-function avgAll(arrayofNum) {
+function avgAll(numArray) {
   var total = 0;
-    for (var i = 0; i < arrayofNum.length; i++) {
-    total += arrayofNum[i];
+    for (var i = 0; i < numArray.length; i++) {
+    total += numArray[i];
 }
-  var avg = total / arrayofNum.length;
-  return avg;
+  avgAll = (total / numArray.length);
+  return avgAll;
 }
 
 
-function countSelected(array){
+function countSelected(numArray){
+   var selected = numArray.options.selectedIndex;
    selected = []
    if HTMLSelectElement.required = true;
     return 1=+;
@@ -72,13 +72,13 @@ function countSelected(array){
 
 
 
-function sumSelected() {
+// function sumSelected() {
 
-}
-
-
+// }
 
 
-function avgSelected() {
 
-}
+
+// function avgSelected() {
+
+// }

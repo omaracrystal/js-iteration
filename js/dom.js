@@ -20,7 +20,7 @@ var avgSelected = document.getElementById("avgSelected");
 
 
 //add event listeners
-sumAll.addEventListener("click", function sumAll())
+sumAll.addEventListener("click", function sumEVERYTHING())
 
 countSelected.addEventListener("click", function countSelected())
 
@@ -37,16 +37,10 @@ var prices= document.getElementsByClassName("all-prices");
 var names= document.getElementsByClassName("all-names");
 
 
-
-// sumAll.onclick = function sumAll() {
-//   var pricesString = prices[0][0].value;
-//   var sum = [0];
-//   for (var i = 0; i < prices[0].length; i++) {
-//     pricesString += ' ' + prices[0][i].value;
-//   };
-//   priceArray = pricesString.split(" ");
-//   priceArray;
-
-//   for j in priceArray
-//     j+=
-// }
+//onclick activation
+sumAll.onclick = function() {
+  createStringArray(prices);
+  convertStringArraytoNumArray(stringArray);
+  sumAll(numArray);
+  answerBox.innerHTML = total;
+};
