@@ -18,9 +18,9 @@ var nameString = document.getElementsByTagName("textarea")[0].value;
 var nameArray = nameString.split("\n");
 //take the array of names and split it into first names
 // var firstNameArray =
-// //take the array of names and split it into last names
+// // //take the array of names and split it into last names
 // var lastNameArray =
-// //take the array of names and output the total length of their names
+// // //take the array of names and output the total length of their names
 // var nameLengthArray =
 
 // for (i in nameArray) {
@@ -31,27 +31,41 @@ var nameArray = nameString.split("\n");
 
 
 
-/////////function to append li elements to this ul id = "answersUl"
-var listAppender = function(array) {
+/////////functions that append li elements to "answerUl" textarea and print innerHTML to li elements once event listener is called
+var nameFiller = function() {
   for (var i = 0; i < 20; i++) {
     var li = document.createElement("li");
-    answerList.appendChild(li)
-    answerList.children[i].innerHTML = array[i];
+    answerList.appendChild(li);
+    answerList.children[i].innerHTML = nameArray[i];
   }
 }
 
+var firstNameFiller = function() {
+  for (var i = 0; i < 20; i++) {
+    var li = document.createElement("li");
+    answerList.appendChild(li);
+    answerList.children[i].innerHTML = firstNameArray[i];
+  }
+}
 
-/////////function to print innerHTML to li elements within the answersUl textarea
-// var listAnswers = function(array) {
-//   for (var i = 0; i < 20; i++) {
-//     answerList.children[i].innerHTML = array[i];
-//   };
-// }
+var lastNameFiller = function() {
+  for (var i = 0; i < 20; i++) {
+    var li = document.createElement("li");
+    answerList.appendChild(li);
+    answerList.children[i].innerHTML = lastNameArray[i];
+  }
+}
 
-
+var nameLengthFiller = function() {
+  for (var i = 0; i < 20; i++) {
+    var li = document.createElement("li");
+    answerList.appendChild(li);
+    answerList.children[i].innerHTML = nameLengthArray[i];
+  }
+}
 
 ////////add event listeners to all buttons
-printAllNames.addEventListener("click", listAppender(nameArray))
+printAllNames.addEventListener("click", nameFiller)
 // firstNames.addEventListener("click", listAnswers(firstNameArray))
 // lastNames.addEventListener("click", listAnswers(lastNameArray))
 // nameLengths.addEventListener("click", listAnswers(nameLengthArray))
