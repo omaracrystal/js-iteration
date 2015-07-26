@@ -7,78 +7,34 @@ Hints for the first problem:
 NOTE: use a loop to make this happen.
 */
 
-function createStringArray(varClassName) {
-  var newString = varClassName[0][0].value
-  var sum = [0]
-  for (var i = 0; i < varClassName[0].length; i++) {
-    newString += ' ' + varClassName[0][i].value;
-  };
-  stringArray = newString.split(" ");
-  return stringArray;
-}
-
-function convertStringArraytoNumArray(stringArray) {
-  for (var i = 0; i < stringArray.length; i++) {
-    stringArray[i] = +stringArray[i];
-  };
-  numArray = stringArray;
-  return numArray;
-}
-
-
-function sumAll(numArray) {
+//this function can sum all selected prices or sum all prices
+var sumAll = function (list) {
   var total = 0;
-    for (var i = 0; i < numArray.length; i++) {
-    total += numArray[i];
-}
+    for (var i = 0; i < list.length; i++) {
+    total += +list[i].value;
+  };
+  console.log(total);
   return total;
 }
-// Two other ways to do the same problem above:
-// 1. console.log(eval(numArray.join('+')));
-//
-// 2 function sumAll(numArray) {
-//   for (
-//     var
-//       index = 0,
-//       length = numArray.length,
-//       sumAll = 0;
-//       index < length;
-//       sumAll += numArray[index++]
-//     );
-//     return sumAll;
-//    }
 
-function avgAll(numArray) {
-  var total = 0;
-    for (var i = 0; i < numArray.length; i++) {
-    total += numArray[i];
-}
-  avgAll = (total / numArray.length);
-  return avgAll;
+//this function can average all selected prices or average all prices
+var avgAll = function (list) {
+  var sum = 0;
+    for (var i = 0; i < list.length; i++) {
+    sum += +list[i].value;
+  }
+  console.log(sum/list.length);
+  return sum/list.length;
 }
 
-
-function countSelected(numArray){
-   var selected = numArray.options.selectedIndex;
-   selected = []
-   if HTMLSelectElement.required = true;
-    return 1=+;
- }
-  else
+//this function can only count the selected options
+function countSelected(list){
+   var selected = 0
+   for (var i = 0; i < list.length; i++) {
+     if (list[i].selected === true) {
+      selected++;
+     }
    };
-   return countSelected;
+   console.log(selected);
+   return selected;
 }
-
-
-
-
-// function sumSelected() {
-
-// }
-
-
-
-
-// function avgSelected() {
-
-// }

@@ -7,40 +7,48 @@ Hints for the first problem:
     - takes the value returned by the `sum` function and displays it on the page
 */
 
-//grabing buttons
-var sumAll = document.getElementById("sum-all");
+//Print all Names functionality
+var allNamesButton = document.getElementById("all-names").addEventListener("click", function() {
 
-var countSelected = document.getElementById("count-selected");
-
-var sumSelected = document.getElementById("sum-selected");
-
-var avgAll = document.getElementById("average-all");
-
-var avgSelected = document.getElementById("avgSelected");
+})
 
 
-//add event listeners
-sumAll.addEventListener("click", function sumEVERYTHING())
 
-countSelected.addEventListener("click", function countSelected())
+//Sum all Button functionality
+var sumAllButton = document.getElementById("sum-all").addEventListener("click", function() {
+  var priceList = document.getElementsByName("prices")[0].children;
+  var sumAllAnswer = document.getElementById("sumAllAnswer");
+  sumAllAnswer.innerHTML = (sumAll(priceList) + " is the sum of all prices.");
 
-sumSelected.addEventListener("click", function sumSelected())
+});
 
-avgAll.addEventListener("click", function avgAll())
+// //Count selected button functionality
+var countSelectedButton = document.getElementById("count-selected").addEventListener("click", function() {
+  var selectArea = document.getElementsByTagName("select")[0];
+  var getSelectedOptions = selectArea.selectedOptions;
+  var countSelectedAnswer = document.getElementById("countSelectedAnswer");
+  countSelectedAnswer.innerHTML = (countSelected(getSelectedOptions) + " is the count of all selected items.");
+});;
 
-avgSelected.addEventListener("click", function avgSelected())
+// //Sum selected button functionality
+var sumSelectedButton = document.getElementById("sum-selected").addEventListener("click", function() {
+  var selectedArea = document.getElementsByTagName("select")[0];
+  var getSelectedOptions = selectedArea.selectedOptions;
+  var sumSelectedAnswer = document.getElementById("sumSelectedAnswer");
+  sumSelectedAnswer.innerHTML = (sumAll(getSelectedOptions) + " is the sum of all selected prices.");
+});
 
+//Average all button functionality
+var avgAllButton = document.getElementById("average-all").addEventListener("click", function() {
+  var priceList = document.getElementsByName("prices")[0].children;
+  var avgAllAnswer = document.getElementById("avgAllAnswer");
+  avgAllAnswer.innerHTML = (avgAll(priceList) + " is the average of all prices.");
+});
 
-//grabing section to evaluate
-var prices= document.getElementsByClassName("all-prices");
-
-var names= document.getElementsByClassName("all-names");
-
-
-//onclick activation
-sumAll.onclick = function() {
-  createStringArray(prices);
-  convertStringArraytoNumArray(stringArray);
-  sumAll(numArray);
-  answerBox.innerHTML = total;
-};
+// //Average button selected functionality
+var avgSelectedButton = document.getElementById("average-selected").addEventListener("click", function() {
+  var selectedArea = document.getElementsByTagName("select")[0];
+  var getSelectedOptions = selectedArea.selectedOptions;
+  var avgSelectedAnswer = document.getElementById("avgSelectedAnswer");
+  avgSelectedAnswer.innerHTML = (avgAll(getSelectedOptions) + " is the avg of all selected prices.");
+});
