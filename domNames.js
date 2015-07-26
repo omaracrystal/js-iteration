@@ -2,79 +2,56 @@
 
 
 ///////grab all buttons
-var allNames = document.getElementById("all-names");
+var printAllNames = document.getElementById("all-names");
 var firstNames = document.getElementById("first-names");
 var lastNames = document.getElementById("last-names");
 var nameLengths = document.getElementById("names-with-lengths")
-
-
-
-/////get selected areas to evaluate
-var names = document.getElementsByTagName("textarea")[0].value;
-var nameList = names.split("\n");
-// var firstNameList =
-// var lastNameList =
-// for (i in namesList) {
-//   create objects of all i;
-//   split the new objects with key words first and last name;
-//   we can then pull first.value and last.value;
-// }
 
 
 /////get ul "answersUl"
 var answerList = document.getElementById("answersUl")
 
 
+/////arrays that will be passed through the listAnswers(); function once the click event happens/////
+//get the string of names and split it into an array
+var nameString = document.getElementsByTagName("textarea")[0].value;
+var nameArray = nameString.split("\n");
+//take the array of names and split it into first names
+// var firstNameArray =
+// //take the array of names and split it into last names
+// var lastNameArray =
+// //take the array of names and output the total length of their names
+// var nameLengthArray =
+
+// for (i in nameArray) {
+//   create objects of all i;
+//   split the new objects with key words first and last name;
+//   we can then pull first.value and last.value;
+// }
+
 
 
 /////////function to append li elements to this ul id = "answersUl"
-var listAppender = function() {
-  for (var i = 0; i < nameList.length; i++) {
+var listAppender = function(array) {
+  for (var i = 0; i < 20; i++) {
     var li = document.createElement("li");
     answerList.appendChild(li)
+    answerList.children[i].innerHTML = array[i];
   }
-  return answerList.children;
 }
 
-listAppender();
 
-var listText = function() {
-  for (var i = 0; i < answerList.children.length; i++) {
-    answerList.children[i].innerHTML = "names";
-  };
-}
-
-//////grabing new li's appended in the Answer box section
-// var allNamesAnswer = answerList.children[0]
-// var firstNamesAnswer = answerList.children[1]
-// var lastNameAnswer = answerList.children[2]
-// var nameLengthsAnswer = answerList.children[3]
-
-
-
-//////Answer Box filler functions to be called in event listeners
-var printAllNames = function () {
-  answersUl.innerHTML = listAppender(newNameList);
-};
-
-var printFirstNames = function () {
-  answersUl.innerHTML = listAppender(newFirstNameList);
-};
-
-var printLastNames = function () {
-  answersUl.innerHTML = listAppender(newLastNameList);
-};
-
-var printNameLengths = function () {
-  answersUl.innerHTML = listAppender(newNameLengthsList);
-};
-
-
+/////////function to print innerHTML to li elements within the answersUl textarea
+// var listAnswers = function(array) {
+//   for (var i = 0; i < 20; i++) {
+//     answerList.children[i].innerHTML = array[i];
+//   };
+// }
 
 
 
 ////////add event listeners to all buttons
-allNames.addEventListener("click", listener)
-firstNames.addEventListener("click", listener)
-lastNames.addEventListener("click", listener)
-nameLengths.addEventListener("click", listener)
+printAllNames.addEventListener("click", listAppender(nameArray))
+// firstNames.addEventListener("click", listAnswers(firstNameArray))
+// lastNames.addEventListener("click", listAnswers(lastNameArray))
+// nameLengths.addEventListener("click", listAnswers(nameLengthArray))
