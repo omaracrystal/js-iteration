@@ -1,14 +1,6 @@
-/*
-Hints for the first problem:
-  1. Define a function that:
-    - is assigned to a variable named `sum`
-    - has one parameter named `options`
-    - returns the calculated sum of all of the values of all of the options passed in
-NOTE: use a loop to make this happen.
-*/
-
 //////////////////////////////////index.html//////////////////////////////////
-//this function can sum all selected prices or sum all prices
+
+//Sum all selected prices or Sum all prices
 var sumAll = function (list) {
   var total = 0;
     for (var i = 0; i < list.length; i++) {
@@ -18,7 +10,7 @@ var sumAll = function (list) {
   return total;
 }
 
-//this function can average all selected prices or average all prices
+//Average all selected prices or Average all prices
 var avgAll = function (list) {
   var sum = 0;
     for (var i = 0; i < list.length; i++) {
@@ -28,7 +20,7 @@ var avgAll = function (list) {
   return sum/list.length;
 }
 
-//this function can only count the selected options
+//Count the selected options
 function countSelected(list){
    var selected = 0
    for (var i = 0; i < list.length; i++) {
@@ -39,6 +31,3 @@ function countSelected(list){
    console.log(selected);
    return selected;
 }
-
-
-//////////////////////////////////names.html//////////////////////////////////
