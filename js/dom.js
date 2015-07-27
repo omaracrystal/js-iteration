@@ -7,54 +7,115 @@ Hints for the first problem:
     - takes the value returned by the `sum` function and displays it on the page
 */
 
-//Print all Names functionality
-// var allNamesButton = document.getElementById("all-names").addEventListener("click", function() {
 
-// })
+//////////////////////////////////prices.html DOM//////////////////////////////////
 
-
-//Sum all Button functionality
-var sumAllButton = document.getElementById("sum-all").addEventListener("click", function() {
-  var priceList = document.getElementsByName("prices")[0].children;
-  var sumAllAnswer = document.getElementById("sumAllAnswer");
-  sumAllAnswer.innerHTML = (sumAll(priceList) + " is the sum of all prices.");
-});
+/////////grab all buttons
+var sumAllButton = document.getElementById("sum-all");
+var countSelectedButton = document.getElementById("count-selected");
+var sumSelectedButton = document.getElementById("sum-selected");
+var avgAllButton = document.getElementById("average-all");
+var avgSelectedButton = document.getElementById("average-selected");
 
 
-
-//Count selected button functionality
-var countSelectedButton = document.getElementById("count-selected").addEventListener("click", function() {
-  var selectArea = document.getElementsByTagName("select")[0];
-  var getSelectedOptions = selectArea.selectedOptions;
-  var countSelectedAnswer = document.getElementById("countSelectedAnswer");
-  countSelectedAnswer.innerHTML = (countSelected(getSelectedOptions) + " is the count of all selected items.");
-});;
+///////get selected areas to evaluate
+var priceList = document.getElementsByName("prices")[0].children;
+var selectArea = document.getElementsByTagName("select")[0];
+var getSelectedOptions = selectArea.selectedOptions;
 
 
-
-//Sum selected button functionality
-var sumSelectedButton = document.getElementById("sum-selected").addEventListener("click", function() {
-  var selectedArea = document.getElementsByTagName("select")[0];
-  var getSelectedOptions = selectedArea.selectedOptions;
-  var sumSelectedAnswer = document.getElementById("sumSelectedAnswer");
-  sumSelectedAnswer.innerHTML = (sumAll(getSelectedOptions) + " is the sum of all selected prices.");
-});
+//////grabing new Id's created in the Answer box section
+var sumAllAnswer = document.getElementById("sumAllAnswer");
+var countSelectedAnswer = document.getElementById("countSelectedAnswer");
+var sumSelectedAnswer = document.getElementById("sumSelectedAnswer");
+var avgAllAnswer = document.getElementById("avgAllAnswer");
+var avgSelectedAnswer = document.getElementById("avgSelectedAnswer");
 
 
+//////Answer Box filler functions to be called in event listeners
+var sumAllFiller = function (){
+sumAllAnswer.innerHTML = (sumAll(priceList) + " is the sum of all prices.");
+}
 
-//Average all button functionality
-var avgAllButton = document.getElementById("average-all").addEventListener("click", function() {
-  var priceList = document.getElementsByName("prices")[0].children;
-  var avgAllAnswer = document.getElementById("avgAllAnswer");
-  avgAllAnswer.innerHTML = (avgAll(priceList) + " is the average of all prices.");
-});
+var countSelectedFiller = function(){
+countSelectedAnswer.innerHTML = (countSelected(getSelectedOptions) + " is the count of all selected items.");
+}
+
+var sumSelectedFiller = function(){
+sumSelectedAnswer.innerHTML = (sumAll(getSelectedOptions) + " is the sum of all selected prices.");
+}
+
+var avgAllFiller = function(){
+avgAllAnswer.innerHTML = (avgAll(priceList) + " is the average of all prices.");
+}
+
+var avgSelectedFiller = function(){
+avgSelectedAnswer.innerHTML = (avgAll(getSelectedOptions) + " is the avg of all selected prices.");
+}
+
+
+////////add event listeners to all buttons
+sumAllButton.addEventListener("click", sumAllFiller);
+countSelectedButton.addEventListener("click", countSelectedFiller);
+sumSelectedButton.addEventListener("click", sumSelectedFiller);
+avgAllButton.addEventListener("click", avgAllFiller);
+avgSelectedButton.addEventListener("click", avgSelectedFiller);
 
 
 
-//Average button selected functionality
-var avgSelectedButton = document.getElementById("average-selected").addEventListener("click", function() {
-  var selectedArea = document.getElementsByTagName("select")[0];
-  var getSelectedOptions = selectedArea.selectedOptions;
-  var avgSelectedAnswer = document.getElementById("avgSelectedAnswer");
-  avgSelectedAnswer.innerHTML = (avgAll(getSelectedOptions) + " is the avg of all selected prices.");
-});
+
+
+
+//////////////////////////////////names.html DOM//////////////////////////////////
+
+////grab all buttons
+var printAllNames = document.getElementById("all-names");
+var firstNames = document.getElementById("first-names");
+var lastNames = document.getElementById("last-names");
+var nameLengths = document.getElementById("names-with-lengths")
+
+
+
+////grab ul "answersUl"
+var answerList = document.getElementById("answersUl")
+//append "li" elements to "answersUL"
+  for (var i = 0; i < objectList.length; i++) {
+    var li = document.createElement("li");
+    answerList.appendChild(li);
+    };
+
+
+
+////functions that print innerHTML to li elements once event listener is called
+var nameFiller = function() {
+  for (var i = 0; i < objectList.length; i++) {
+    answerList.children[i].innerHTML = nameArray[i]
+  }
+}
+
+var firstNameFiller = function() {
+  for (var i = 0; i < objectList.length; i++) {
+    answerList.children[i].innerHTML = objectList[i].first;
+  }
+}
+
+var lastNameFiller = function() {
+  for (var i = 0; i < objectList.length; i++) {
+    answerList.children[i].innerHTML = objectList[i].last;
+  }
+}
+
+var nameLengthFiller = function() {
+  for (var i = 0; i < objectList.length; i++) {
+    answerList.children[i].innerHTML = nameArray[i].length;
+  }
+}
+
+
+
+////add event listeners to all buttons
+printAllNames.addEventListener("click", nameFiller)
+firstNames.addEventListener("click", firstNameFiller)
+lastNames.addEventListener("click", lastNameFiller)
+nameLengths.addEventListener("click", nameLengthFiller)
+
