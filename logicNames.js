@@ -8,8 +8,8 @@ var nameArray = nameString.split("\n");
 
 ////create a list of fullName objects with key, value pairs being first & last
 var nameObjectArray = function (nameArray) {
-    //holder for new object array
-    objectList = [];
+  //holder for new object array
+  objectList = [];
   for (var i=0; i < nameArray.length; i++) {
     //trim excess spaces
     var trimmed=nameArray[i].trim();
@@ -19,6 +19,6 @@ var nameObjectArray = function (nameArray) {
     objectList.push({"first": names[0], "last": names[1]});
   };
   console.log(objectList);
-  }
+}
 
 nameObjectArray(nameArray);

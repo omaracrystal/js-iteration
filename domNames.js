@@ -12,10 +12,10 @@ var nameLengths = document.getElementById("names-with-lengths")
 ////grab ul "answersUl"
 var answerList = document.getElementById("answersUl")
 //append "li" elements to "answersUL"
-  for (var i = 0; i < objectList.length; i++) {
-    var li = document.createElement("li");
-    answerList.appendChild(li);
-    };
+for (var i = 0; i < objectList.length; i++) {
+  var li = document.createElement("li");
+  answerList.appendChild(li);
+};
 
 
 

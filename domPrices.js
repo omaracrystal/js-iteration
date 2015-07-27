@@ -24,23 +24,23 @@ var avgSelectedAnswer = document.getElementById("avgSelectedAnswer");
 
 //////Answer Box filler functions to be called in event listeners
 var sumAllFiller = function (){
-sumAllAnswer.innerHTML = (sumAll(priceList) + " is the sum of all prices.");
+  sumAllAnswer.innerHTML = (sumAll(priceList) + " is the sum of all prices.");
 }
 
 var countSelectedFiller = function(){
-countSelectedAnswer.innerHTML = (countSelected(getSelectedOptions) + " is the count of all selected items.");
+  countSelectedAnswer.innerHTML = (countSelected(getSelectedOptions) + " is the count of all selected items.");
 }
 
 var sumSelectedFiller = function(){
-sumSelectedAnswer.innerHTML = (sumAll(getSelectedOptions) + " is the sum of all selected prices.");
+  sumSelectedAnswer.innerHTML = (sumAll(getSelectedOptions) + " is the sum of all selected prices.");
 }
 
 var avgAllFiller = function(){
-avgAllAnswer.innerHTML = (avgAll(priceList) + " is the average of all prices.");
+  avgAllAnswer.innerHTML = (avgAll(priceList) + " is the average of all prices.");
 }
 
 var avgSelectedFiller = function(){
-avgSelectedAnswer.innerHTML = (avgAll(getSelectedOptions) + " is the avg of all selected prices.");
+  avgSelectedAnswer.innerHTML = (avgAll(getSelectedOptions) + " is the avg of all selected prices.");
 }
 
 
